@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coordinates</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: blanchedalmond;
+        margin-bottom: 5px;
+        border-radius: 5px;
+      }
+      .button-container {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+      }
+      #target {
+        background: thistle;
+      }
+    </style>
+  </head>
+  <body>
+    <aside class="button-container">
+      <button class="scroll-by">Scroll by 100px(y)</button>
+      <button class="scroll-to">Scroll to 100px(y)</button>
+      <button class="scroll-into">Scroll into target</button>
+    </aside>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="target"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+      const target = document.querySelector("#target");
+      target.addEventListener("click", (event) => {
+        const rect = target.getBoundingClientRect();
+        console.log(rect);
+        console.log(`client: ${event.clientX}, ${event.clientY}`);
+        console.log(`page: ${event.pageX}, ${event.pageY}`);
+      });
+
+      const scrollByButton = document.querySelector(".scroll-by");
+      const scrollToButton = document.querySelector(".scroll-to");
+      const scrollIntoButton = document.querySelector(".scroll-into");
+
+      scrollByButton.addEventListener("click", () => {
+        // window.scrollBy(0, 100);
+        window.scrollBy({ top: 100, behavior: "smooth" });
+      });
+      scrollToButton.addEventListener("click", () => {
+        // window.scrollTo(0, 100);
+        window.scrollTo({ top: 100, behavior: "smooth" });
+      });
+      scrollIntoButton.addEventListener("click", () => {
+        // const rect = target.getBoundingClientRect();
+        // window.scroll({ top: rect.y, left: rect.y, behavior: "smooth" });
+        target.scrollIntoView({ behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>

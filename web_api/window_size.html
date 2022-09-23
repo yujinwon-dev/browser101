@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window size</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+      #target {
+        background: thistle;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="target">Window size</div>
+    <script>
+      const target = document.querySelector("#target");
+      console.log(target.getBoundingClientRect());
+      const updateSize = () => {
+        target.innerHTML = `
+          window.screen: ${window.screen.width}, ${window.screen.height} <br />
+          window.outer: ${window.outerWidth}, ${window.outerHeight} <br />
+          window.inner: ${window.innerWidth}, ${window.innerHeight} <br />
+          documentElement.clientWidth: ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}
+        `;
+      };
+      window.addEventListener("resize", () => {
+        updateSize();
+      });
+      // 페이지가 처음 로드되었을 때 Window size 텍스트 대신 사이즈 정보 텍스트를 보여주기 위함
+      updateSize();
+    </script>
+  </body>
+</html>
