@@ -1,15 +1,19 @@
 const image = document.querySelector(".target-image");
-const coordinates = document.querySelector("#coordinates");
+const coordinates = document.querySelector(".coordinates");
 const horizontal = document.querySelector(".horizontal");
 const vertical = document.querySelector(".vertical");
 
 window.addEventListener("mousemove", (event) => {
-  coordinates.innerHTML = `${event.clientX}px, ${event.clientY}px`;
-  coordinates.style.top = `${event.clientY}px`;
-  coordinates.style.left = `${event.clientX}px`;
+  const x = event.clientX;
+  const y = event.clientY;
 
-  image.style.margin = `${event.clientY}px 0 0 ${event.clientX}px`;
+  coordinates.innerHTML = `${x}px, ${y}px`;
+  coordinates.style.top = `${y}px`;
+  coordinates.style.left = `${x}px`;
 
-  horizontal.style.top = `${event.clientY}px`;
-  vertical.style.left = `${event.clientX}px`;
+  image.style.top = `${y}px`;
+  image.style.left = `${x}px`;
+
+  horizontal.style.top = `${y}px`;
+  vertical.style.left = `${x}px`;
 });
