@@ -11,20 +11,20 @@
   <body>
     <script>
       // all resources (css, images, ...)
-      window.addEventListener("load", () => {
-        console.log("load");
+      window.addEventListener('load', () => {
+        console.log('load');
       });
-      // only HTML
-      window.addEventListener("DOMContentLoaded", () => {
-        console.log("DOMContentLoaded");
+      // only HTML (defer)
+      window.addEventListener('DOMContentLoaded', () => {
+        console.log('DOMContentLoaded');
       });
       // before unload
-      window.addEventListener("beforeunload", () => {
-        console.log("beforeunload");
+      window.addEventListener('beforeunload', () => {
+        console.log('beforeunload');
       });
       // resource is being unloaded
-      window.addEventListener("unload", () => {
-        console.log("unload");
+      window.addEventListener('unload', () => {
+        console.log('unload');
       });
     </script>
   </body>

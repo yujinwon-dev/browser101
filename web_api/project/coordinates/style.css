@@ -15,13 +15,11 @@ body {
   position: absolute;
   width: 60px;
   height: 60px;
-  transform: translate(-50%, -50%);
 }
 
 .coordinates {
   position: absolute;
   color: #fff;
-  transform: translate(10px, 10px);
 }
 
 .line {
