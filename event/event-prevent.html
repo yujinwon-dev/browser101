@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 250px;
+        height: 250px;
+        background-color: yellow;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="checkbox" />
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+      document.addEventListener('wheel', (event) => {
+        // 스크롤처럼 빠르게 동작해야 하는 이벤트는 이벤트 발생 알려주고 자기 할 일을 함(화면 스크롤)
+        // 그래서 preventDefault 해도 동작하지 않음
+        console.log('scrolling');
+        event.preventDefault();
+      });
+      const checkbox = document.querySelector('input');
+      checkbox.addEventListener('click', (event) => {
+        // long
+        console.log('checked');
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>
