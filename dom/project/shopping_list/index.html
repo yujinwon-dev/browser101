@@ -5,19 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping List</title>
+    <script
+      src="https://kit.fontawesome.com/b7199ea2e4.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./style.css" />
     <script src="./main.js" defer></script>
   </head>
   <body>
     <main>
-      <h1 class="title">Shopping List</h1>
+      <header class="header">Shopping List</header>
       <ul class="shopping-list"></ul>
-      <form class="add-form">
-        <input type="text" id="item-input" />
-        <div class="add-button-wrapper">
-          <button class="add-button">+</button>
-        </div>
-      </form>
+      <footer class="footer">
+        <form class="add-form">
+          <input type="text" id="item-input" />
+          <div class="add-button-wrapper">
+            <button class="add-button"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </form>
+      </footer>
     </main>
   </body>
 </html>
